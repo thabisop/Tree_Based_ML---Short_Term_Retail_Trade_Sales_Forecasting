@@ -1,0 +1,32 @@
+# Python packages for the retail trade sales forecasting pipeline.
+#
+# Stage 1 (data aggregation) runs locally in Anaconda / Jupyter and needs this
+# whole list. Stages 2 and 3 (EDA and modelling) run in Google Colab, which
+# already ships most of these; install there only to reproduce the exact
+# environment. The pinned ML versions below are the ones reported in the paper
+# (run on Colab with Python 3.13.15).
+#
+#   pip install -r requirements.txt
+
+# --- core data handling ---
+numpy
+pandas
+
+# --- reading the raw source workbooks (data-aggregation stage) ---
+openpyxl          # .xlsx files (BIS CPI/FX, BER CCI, Stats SA 2019-base retail, electricity)
+xlrd              # legacy .xls files (Stats SA retail vintages 1968-2001)
+
+# --- running the notebooks locally ---
+jupyter
+
+# --- EDA and plotting ---
+matplotlib
+seaborn
+scipy
+
+# --- modelling (pinned to the versions reported in the paper) ---
+statsmodels==0.15.0
+scikit-learn==1.6.1
+xgboost==3.4.1
+lightgbm==4.6.0
+shap
